@@ -1,0 +1,19 @@
+<p>main-page works!</p>
+<div class="row">
+    <table class="table">
+        <thead>
+         <tr>
+            <th scope="col">#</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Password</th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of Usuarios; let iControl=index">
+            <th scope="row">{{usuario.usuarioId}}</th>
+                <td>{{usuario.usuario}}</td>
+                <td>{{usuario.password}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
