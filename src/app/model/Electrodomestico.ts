@@ -1,5 +1,6 @@
 export interface Electrodomestico {
     electrodomesticoId?: number,
-    descripcion:string,
-    tipo:string
+    tipo:string,
+    descripcion:string
+
 }

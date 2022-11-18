@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { pathToFileURL } from 'url';
 import { MainPageComponent } from './components/main-page/main-page.component';
 const routes: Routes = [
-  {path: 'usuarios', component: MainPageComponent}
+  {path: 'electro', component: MainPageComponent}
 ];
 
 @NgModule({

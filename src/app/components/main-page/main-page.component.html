@@ -1,18 +1,18 @@
-<p>main-page works!</p>
+<h1>Electrodomesticos</h1>
 <div class="row">
     <table class="table">
         <thead>
          <tr>
             <th scope="col">#</th>
-            <th scope="col">Usuario</th>
-            <th scope="col">Password</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Descripcion</th>
          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let usuario of Usuarios; let iControl=index">
-            <th scope="row">{{usuario.usuarioId}}</th>
-                <td>{{usuario.usuario}}</td>
-                <td>{{usuario.password}}</td>
+            <tr *ngFor="let electrodomestico of Electrodomesticos; let iControl=index">
+            <th scope="row">{{electrodomestico.id}}</th>
+                <td>{{electrodomestico.tipo}}</td>
+                <td>{{electrodomestico.descripcion}}</td>
             </tr>
         </tbody>
     </table>
