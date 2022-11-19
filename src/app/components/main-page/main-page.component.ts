@@ -13,8 +13,8 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getElectrodomesticos().subscribe(res => {
-      console.log(res);
-      this.Electrodomesticos=res
+      console.log(res.valueOf);
+      this.Electrodomesticos=res;
     })
   }
 }

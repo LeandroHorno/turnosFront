@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { observable } from 'rxjs';
+import { catchError, map, Observable, observable } from 'rxjs';
 import { Electrodomestico } from '../model/Electrodomestico';
-
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
   URI: string = 'http://localhost:8080/meet-api/v1'
+
+  private HttpHeaders  = new HttpHeaders({'Content-Type': 'application/json'})
+
   constructor(private httpClient:HttpClient) { }
 
-  getElectrodomesticos(){
-    return this.httpClient.get(this.URI+"/electrodomesticos/read")
-  }
+  //data es la clave-valor que contiene el objeto
+  getElectrodomesticos():Observable<any>{
+    return this.httpClient.get(this.URI+"/electrodomesticos/read",{headers:this.HttpHeaders}).pipe(
+      map((data:any)=> data.Electrodomestico), //aca "data.objeto" no logro recuperarlo
+      catchError((err)=> {
+          return err;
+        }
+      )
+    ) ;       
+ }
 }
