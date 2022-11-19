@@ -16,7 +16,7 @@ export class ServiceService {
   //data es la clave-valor que contiene el objeto
   getElectrodomesticos():Observable<any>{
     return this.httpClient.get(this.URI+"/electrodomesticos/read",{headers:this.HttpHeaders}).pipe(
-      map((data:any)=> data.Electrodomestico), //aca "data.objeto" no logro recuperarlo
+      map((data:any)=> data.data),
       catchError((err)=> {
           return err;
         }
